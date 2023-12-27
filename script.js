@@ -1,12 +1,5 @@
-/*
-0. connect to api
-1. enter city name to search
-2. if input placeholder is doesn't have any name error
-3. if the name of city does not exist error
-4. get the information from api after click button and reset the input placeholder
-5. print the information on screen with first caracter in Capital
-6. change the icon image of weather
-*/
+"use strict";
+//selectors
 const button = document.querySelector("button");
 const inputBox = document.querySelector("#input");
 const weatherImg = document.querySelector(".weather-icon");
@@ -24,7 +17,6 @@ async function getData(city) {
       `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`
     );
     let data = await response.json();
-    console.log(data);
     displayData(data);
   } catch (error) {
     console.error("Error", error);
